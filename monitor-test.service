@@ -1,0 +1,6 @@
+[Unit]
+Description=Monitor process "test"
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/monitor-test.sh
