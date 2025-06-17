@@ -1,0 +1,11 @@
+/var/log/monitoring.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+    create 0640 root adm
+    postrotate
+        systemctl restart monitor-test.timer >/dev/null 2>&1 || true
+    endscript
+}
