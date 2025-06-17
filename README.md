@@ -20,19 +20,21 @@ https://test.com/monitoring/test/api
       sudo chmod +x /usr/local/bin/monitor-test.sh
    ### 2. systemd Unit-файлы - monitor-test.service и создаём monitor-test.timer
 
- Активация сервиса и таймера:
+### Активация сервиса и таймера:
    sudo systemctl daemon-reexec
    sudo systemctl daemon-reload
    sudo systemctl enable --now monitor-test.timer
 
-Ещё можно  добавить ротацию логов (logrotate), защиту от запуска нескольких копий (flock) или систему уведомлений.
+### Ещё можно  добавить ротацию логов (logrotate), защиту от запуска нескольких копий (flock) или систему уведомлений.
  1. Ротация логов - monitoring.log
     Создаём файл  - monitoring:
 
-
-
-
-
+### Это будет:
+   > - ротация каждый день,
+   > - хранить 7 архивов (rotate 7),
+   > - сжатие (compress),
+   > - не ругаться, если файл отсутствует (missingok),
+   > - не трогать пустые (notifempty).
 
 
 
